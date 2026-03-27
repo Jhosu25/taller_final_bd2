@@ -7,18 +7,19 @@
       <p>MongoDB Atlas Analytics</p>
     </div>
 
-    <!-- BUSCADOR -->
-    <div class="search-box">
-      <input type="text" placeholder="Buscar país..." />
-    </div>
+   <!-- BUSCADOR -->
+<input 
+  type="text" 
+  placeholder="Buscar país..." 
+  (input)="onSearch($event)"
+/>
   </header>
 
   <!-- FILTROS -->
   <div class="filters">
-    <button class="filter active">Casos</button>
-    <button class="filter">Muertes</button>
-    <button class="filter">Vacunación</button>
-  </div>
+  <button (click)="setFilter('cases')" [class.active]="selectedFilter==='cases'">Casos</button>
+  <button (click)="setFilter('deaths')" [class.active]="selectedFilter==='deaths'">Casos por Continentes</button>
+</div>
 
   <!-- GRID CHARTS -->
   <div class="grid">
